@@ -109,10 +109,11 @@
   .mite-card .ln.s{width:60%}
 
   /* float tag on mock */
-  .floaty{position:absolute;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:11px 15px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600}
-  .floaty .ic{width:30px;height:30px;border-radius:8px;background:var(--accent-wash);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;font-size:15px}
-  .floaty.f1{right:-14px;top:30px;transform:rotate(2deg)}
-  .floaty.f2{left:-22px;bottom:34px;transform:rotate(-3deg)}
+  .floaty{position:absolute;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:11px 15px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;white-space:nowrap;z-index:2}
+  .floaty .ic{width:30px;height:30px;border-radius:8px;background:var(--accent-wash);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;font-size:15px;flex:0 0 auto}
+  .floaty.f1{right:-48px;top:-22px;transform:rotate(2deg)}
+  .floaty.f2{left:-48px;bottom:-22px;transform:rotate(-3deg)}
+  .hero__visual{position:relative;padding:36px 60px}
 
   /* ---------- marquee ---------- */
   .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--mist);padding:18px 0;margin-top:64px;overflow:hidden;white-space:nowrap;position:relative}
@@ -231,7 +232,10 @@
     .hero__grid{grid-template-columns:1fr;gap:48px}
     .hero{padding-top:120px}
     .mock{transform:none;max-width:460px}
-    .floaty.f2{left:0}
+    .hero__visual{padding:24px 40px}
+    .floaty{font-size:12px;padding:9px 12px}
+    .floaty.f1{right:-26px;top:-16px}
+    .floaty.f2{left:-26px;bottom:-16px}
     .steps,.svc,.price{grid-template-columns:1fr}
     .refs{grid-template-columns:1fr}
     .cta__grid{grid-template-columns:1fr;gap:34px}
@@ -240,6 +244,9 @@
   @media(max-width:520px){
     .form__row{grid-template-columns:1fr}
     .hero__actions .btn{width:100%;justify-content:center}
+    .floaty{position:static;width:fit-content;margin:10px auto 0;transform:none!important}
+    .floaty.f1{margin-top:14px}
+    .hero__visual{display:flex;flex-direction:column;align-items:center;padding:0}
   }
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important;scroll-behavior:auto}
@@ -290,7 +297,7 @@
         </div>
       </div>
 
-      <div class="rv" style="--d:.2s" aria-hidden="true">
+      <div class="rv hero__visual" style="--d:.2s" aria-hidden="true">
         <div class="mock">
           <div class="mock__bar">
             <div class="mock__dots"><i></i><i></i><i></i></div>
